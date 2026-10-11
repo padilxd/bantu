@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* ── Base variables ── */
+:root {
+  --base-font-size: 16px;
+}
+
+/* ── Font size scaling ── */
+html[data-font-size="besar"] {
+  font-size: 20px;
+}
+
+html[data-font-size="sangat-besar"] {
+  font-size: 24px;
+}
+
+/* ── High contrast mode ── */
+html[data-contrast="tinggi"] {
+  --tw-text-opacity: 1;
+  filter: contrast(1.3);
+}
+
+html[data-contrast="tinggi"] body {
+  background-color: #fff;
+  color: #000;
+}
+
+/* ── Reduced motion ── */
+html[data-motion="reduced"] *,
+html[data-motion="reduced"] *::before,
+html[data-motion="reduced"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ── Focus visible ring (global fallback) ── */
+:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+
+/* ── Line clamp utility ── */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
